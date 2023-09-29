@@ -20,7 +20,7 @@ class Solution:
 
 
 Second attempt, it indexes values and their indexes. Then for each value, search in dictionary if there is the other value that the sum is equal to target.\
-`0(n)` in time and `0(n)` in space \
+`0(n)` in time and `0(n)` in space. \
 Runs in 60ms.
 
 ```python
@@ -106,4 +106,54 @@ class Solution:
                 tmp = tmp.next
                 tmp1 = tmp1.next
                 tmp2 = tmp2.next
+```
+
+
+## 3 Longest substring without repeating characters
+
+[Add two numbers](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
+
+It keeps in cache the longest substring without repeating characters. This a sliding window algorithm. \
+It is `0(n)` in time and `0(1)` in space (because we can only have letters, digits and special characters so around 256 possibilities).
+
+```python
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        maxSize = 0
+        currentSubstring = []
+        for i in range(len(s)):
+            c = s[i]
+            if c in currentSubstring:
+                tmp = currentSubstring.pop(0)
+                while tmp != c :
+                    tmp = currentSubstring.pop(0)
+                currentSubstring += c
+            else:
+                currentSubstring += c
+                if len(currentSubstring) > maxSize:
+                    maxSize = len(currentSubstring)
+        return maxSize
+```
+
+Cleaner solution from [Redquark](https://redquark.org/leetcode/0003-longest-substring-without-repeating-characters/)
+
+```python
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        if (len(s) == 0):
+            return 0
+        maxSize = 1
+        start = 0
+        end = 1
+        distincts = set(s[start])
+        while end < len(s):
+            c = s[end]
+            if c in distincts:
+                distincts.remove(s[start])
+                start += 1
+            else:
+                distincts.add(c)
+                maxSize = max(maxSize, len(distincts))
+                end += 1
+        return maxSize
 ```
