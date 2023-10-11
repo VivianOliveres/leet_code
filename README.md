@@ -172,7 +172,6 @@ TODO!
 
 [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)
 
-TODO!
 It starts from the left index then look for both (left and right) indexes if they formed a new palindrom. If not, it only looks with the next right index by comparing the possible new palindrom and it's reversed string. Finaly, the first loop move faster according to the last index checked. \
 The perf is not the best (only 40% better of other python developers) but a better solution (and not intuitive) is [Manacher's_algorithm](https://en.wikipedia.org/wiki/Longest_palindromic_substring#Manacher's_algorithm).
 
@@ -205,5 +204,47 @@ class Solution:
             
             i += min(1, maxIndex - i)
         return longest
+```
+
+## 6 Zigzag Conversion
+
+[Zigzag Conversion](https://leetcode.com/problems/zigzag-conversion/description/)
+
+TODO: perf is not good enough
+>14%
+114ms
+
+```python
+class Solution:
+
+    def cell(self, i: int, numRows: int) -> (int, int):
+        if numRows == 1:
+            return (0, i)
+        else:
+            part = i // max(1, 2 * numRows - 2)
+            remainder = i % max(1, 2 * numRows - 2)
+            col = -1
+            row = -1
+            if remainder < numRows:
+                col = part * (numRows-1)
+                row = remainder % numRows
+            else:
+                col = part * (numRows-1) + (remainder - numRows + 1)
+                row = numRows - (remainder - numRows + 2)
+            return (row, col)
+
+    def convert(self, s: str, numRows: int) -> str:
+        dict = {}
+        for i in range(len(s)):
+            key = self.cell(i, numRows)
+            dict[key] = i
+        
+        
+        result = ""
+        keys = list(dict.keys())
+        keys.sort()
+        for key in keys:
+            result += s[dict[key]]
+        return result
 
 ```
