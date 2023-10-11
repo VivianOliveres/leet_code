@@ -1,0 +1,12 @@
+# leet_code
+
+Personal solutions (and comments) of exercices from [Leet Code](https://leetcode.com).
+
+| Number | Complexity | Title                                          | Link                                                                                                | Python                                       | Scala                                                 |
+|--------|------------|------------------------------------------------|-----------------------------------------------------------------------------------------------------|----------------------------------------------|-------------------------------------------------------|
+| 1      | Easy       | Two sum                                        | [Link](https://leetcode.com/problems/two-sum/description/)                                          | [0001.py](../master/src/main/python/0001.py) | [TwoSum.scala](../master/src/main/scala/TwoSum.scala) |
+| 2      | Medium     | Add two numbers                                | [Link](https://leetcode.com/problems/add-two-numbers/description/)                                  | [0002.py](../master/src/main/python/0002.py) | []()                                                  |
+| 3      | Medium     | Longest substring without repeating characters | [Link](https://leetcode.com/problems/longest-substring-without-repeating-characters/description/)   | [0003.py](../master/src/main/python/0003.py) | []()                                           |
+| 4      | Hard       | Median of two sorted arrays                    | [Link](https://leetcode.com/problems/median-of-two-sorted-arrays/description/)                      | [](../master/src/main/python/0004.py)        | []()                                           |
+| 5      | Medium       | Longest Palindromic Substring                    | [Link](https://leetcode.com/problems/longest-substring-without-repeating-characters/description/)                      | [0005.py](../master/src/main/python/0005.py) | []()                                           |
+| 6      | Medium       | Zigzag Conversion                    | [Link](https://leetcode.com/problems/zigzag-conversion/description/)                      | [0006.py](../master/src/main/python/0006.py) | []()                                           |
