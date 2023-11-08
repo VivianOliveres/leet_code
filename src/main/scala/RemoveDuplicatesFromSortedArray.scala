@@ -3,7 +3,7 @@ object RemoveDuplicatesFromSortedArray {
     val inOut = Seq(
       (Array(1, 1, 2), 2),
       (Array(0, 0, 1, 1, 1, 2, 2, 3, 3, 4), 5),
-      (Array(1), 1),
+      (Array(1), 1)
     )
 
     inOut.foreach { case (x, expected) =>
@@ -11,10 +11,11 @@ object RemoveDuplicatesFromSortedArray {
       if (result == expected)
         println(s"Success for (${x.toSeq}) => ${expected}")
       else
-        System.err.println(s"FAIL for (${x.toSeq}) : ${expected} => result found: ${result}")
+        System.err.println(
+          s"FAIL for (${x.toSeq}) : ${expected} => result found: ${result}"
+        )
     }
   }
-
 
   def removeDuplicates(nums: Array[Int]): Int = {
     var count = 1

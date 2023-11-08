@@ -4,7 +4,7 @@ object PalindromeNumber {
     val inOut = Seq(
       (121, true),
       (-121, false),
-      (10, false),
+      (10, false)
     )
 
     inOut.foreach { case (x, expected) =>
@@ -12,7 +12,9 @@ object PalindromeNumber {
       if (result == expected)
         println(s"Success for (${x}) => ${expected}")
       else
-        System.err.println(s"FAIL for (${x}) : ${expected} => result found: ${result}")
+        System.err.println(
+          s"FAIL for (${x}) : ${expected} => result found: ${result}"
+        )
     }
   }
 

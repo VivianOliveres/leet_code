@@ -6,7 +6,10 @@ object ThreeSum {
       (Array(-1, 0, 1, 2, -1, -4), List(List(-1, -1, 2), List(-1, 0, 1))),
       (Array(0, 1, 1), List()),
       (Array(0, 0, 0), List(List(0, 0, 0))),
-      (Array(3, 0, -2, -1, 1, 2), List(List(-2, -1, 3), List(-2, 0, 2), List(-1, 0, 1))),
+      (
+        Array(3, 0, -2, -1, 1, 2),
+        List(List(-2, -1, 3), List(-2, 0, 2), List(-1, 0, 1))
+      )
     )
 
     inOut.foreach { case (x, expected) =>
@@ -14,16 +17,17 @@ object ThreeSum {
       if (result == expected)
         println(s"Success for (${x.toSeq}) => ${expected}")
       else
-        System.err.println(s"FAIL for (${x.toSeq}) : expected [${expected}] but found [${result}]")
+        System.err.println(
+          s"FAIL for (${x.toSeq}) : expected [${expected}] but found [${result}]"
+        )
     }
   }
 
-  /**
-   * 1. Sort the numbers
-   * 2. Loop over the numbers (index i)
-   * 3. Loop with two indexes : one at the beginning (k) and one at the end (k)
-   * Then check the sum and move j or according to the sum result.
-   */
+  /** 1. Sort the numbers
+    * 2. Loop over the numbers (index i)
+    * 3. Loop with two indexes : one at the beginning (k) and one at the end (k)
+    * Then check the sum and move j or according to the sum result.
+    */
   def threeSum(nums: Array[Int]): List[List[Int]] = {
     val elements = nums.sorted
     var i = 1

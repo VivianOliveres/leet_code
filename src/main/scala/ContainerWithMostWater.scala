@@ -2,8 +2,8 @@ object ContainerWithMostWater {
 
   def main(args: Array[String]): Unit = {
     val inOut = Seq(
-      (Array(1,8,6,2,5,4,8,3,7), 49),
-      (Array(1,1), 1),
+      (Array(1, 8, 6, 2, 5, 4, 8, 3, 7), 49),
+      (Array(1, 1), 1)
     )
 
     inOut.foreach { case (x, expected) =>
@@ -11,7 +11,9 @@ object ContainerWithMostWater {
       if (result == expected)
         println(s"Success for (${x.toSeq}) => ${expected}")
       else
-        System.err.println(s"FAIL for (${x.toSeq}) : ${expected} => result found: ${result}")
+        System.err.println(
+          s"FAIL for (${x.toSeq}) : ${expected} => result found: ${result}"
+        )
     }
   }
 

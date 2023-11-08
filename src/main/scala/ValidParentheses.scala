@@ -10,7 +10,7 @@ object ValidParentheses {
       ("", true),
       ("([)]", false),
       ("[", false),
-      ("]", false),
+      ("]", false)
     )
 
     inOut.foreach { case (x, expected) =>
@@ -18,7 +18,9 @@ object ValidParentheses {
       if (result == expected)
         println(s"Success for (${x.toSeq}) => ${expected}")
       else
-        System.err.println(s"FAIL for (${x.toSeq}) : ${expected} => result found: ${result}")
+        System.err.println(
+          s"FAIL for (${x.toSeq}) : ${expected} => result found: ${result}"
+        )
     }
   }
 

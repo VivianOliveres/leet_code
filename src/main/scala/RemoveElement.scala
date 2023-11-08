@@ -2,8 +2,8 @@ object RemoveElement {
 
   def main(args: Array[String]): Unit = {
     val inOut = Seq(
-      (Array(3,2,2,3), 3, 2),
-      (Array(0,1,2,2,3,0,4,2), 2, 5),
+      (Array(3, 2, 2, 3), 3, 2),
+      (Array(0, 1, 2, 2, 3, 0, 4, 2), 2, 5)
     )
 
     inOut.foreach { case (x, value, expected) =>
@@ -11,7 +11,9 @@ object RemoveElement {
       if (result == expected)
         println(s"Success for (${x.toSeq}) => ${expected}")
       else
-        System.err.println(s"FAIL for (${x.toSeq}) : ${expected} => result found: ${result}")
+        System.err.println(
+          s"FAIL for (${x.toSeq}) : ${expected} => result found: ${result}"
+        )
     }
   }
 

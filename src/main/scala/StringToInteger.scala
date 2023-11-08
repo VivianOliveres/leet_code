@@ -8,7 +8,7 @@ object StringToInteger {
       ("91283472332", 2147483647),
       ("-91283472332", -2147483648),
       ("3.14159", 3),
-      ("words and 987", 0),
+      ("words and 987", 0)
     )
 
     inOut.foreach { case (x, expected) =>
@@ -16,7 +16,9 @@ object StringToInteger {
       if (result == expected)
         println(s"Success for (${x}) => ${expected}")
       else
-        System.err.println(s"FAIL for (${x}) : ${expected} => result found: ${result}")
+        System.err.println(
+          s"FAIL for (${x}) : ${expected} => result found: ${result}"
+        )
     }
   }
 
@@ -37,7 +39,8 @@ object StringToInteger {
     if (i == 0)
       0
     else
-      rest.substring(0, i)
+      rest
+        .substring(0, i)
         .toIntOption
         .map(v => if (isNegative) v * -1 else v)
         .getOrElse(if (isNegative) Int.MinValue else Int.MaxValue)

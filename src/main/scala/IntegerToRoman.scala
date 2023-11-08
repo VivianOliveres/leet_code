@@ -13,7 +13,7 @@ object IntegerToRoman {
       (1000, "M"),
       (3, "III"),
       (58, "LVIII"),
-      (1994, "MCMXCIV"),
+      (1994, "MCMXCIV")
     )
 
     inOut.foreach { case (x, expected) =>
@@ -21,7 +21,9 @@ object IntegerToRoman {
       if (result == expected)
         println(s"Success for (${x}) => ${expected}")
       else
-        System.err.println(s"FAIL for (${x}) : expected [${expected}] but found [${result}]")
+        System.err.println(
+          s"FAIL for (${x}) : expected [${expected}] but found [${result}]"
+        )
     }
   }
 
@@ -38,7 +40,7 @@ object IntegerToRoman {
     6 -> Seq("VI", "LX", "DC", "6?"),
     7 -> Seq("VII", "LXX", "DCC", "7?"),
     8 -> Seq("VIII", "LXXX", "DCCC", "8?"),
-    9 -> Seq("IX", "XC", "CM", "9?"),
+    9 -> Seq("IX", "XC", "CM", "9?")
   )
 
   def intToRoman(num: Int): String = {
@@ -56,6 +58,5 @@ object IntegerToRoman {
       intToRoman(rest, pos + 1, currentNumber + agg)
     }
   }
-
 
 }

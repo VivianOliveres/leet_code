@@ -1,9 +1,9 @@
 object LetterCombinationsOfAPhoneNumber {
   def main(args: Array[String]): Unit = {
     val inOut = Seq(
-      ("23", List("ad","ae","af","bd","be","bf","cd","ce","cf")),
+      ("23", List("ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf")),
       ("", List()),
-      ("2", List("a","b","c")),
+      ("2", List("a", "b", "c"))
     )
 
     inOut.foreach { case (x, expected) =>
@@ -11,7 +11,9 @@ object LetterCombinationsOfAPhoneNumber {
       if (result == expected)
         println(s"Success for (${x}) => ${expected}")
       else
-        System.err.println(s"FAIL for (${x}) : expected [${expected}] but found [${result}]")
+        System.err.println(
+          s"FAIL for (${x}) : expected [${expected}] but found [${result}]"
+        )
     }
   }
 
@@ -23,14 +25,18 @@ object LetterCombinationsOfAPhoneNumber {
     '6' -> List("m", "n", "o"),
     '7' -> List("p", "q", "r", "s"),
     '8' -> List("t", "u", "v"),
-    '9' -> List("w", "x", "y", "z"),
+    '9' -> List("w", "x", "y", "z")
   )
 
   def letterCombinations(digits: String): List[String] = {
     letterCombinations(digits, "", List())
   }
 
-  private def letterCombinations(rest: String, current: String, acc: List[String]): List[String] = {
+  private def letterCombinations(
+      rest: String,
+      current: String,
+      acc: List[String]
+  ): List[String] = {
     if (rest.isEmpty && current.isEmpty)
       acc
     else if (rest.isEmpty)

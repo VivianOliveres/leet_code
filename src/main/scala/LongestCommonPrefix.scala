@@ -2,11 +2,11 @@ object LongestCommonPrefix {
 
   def main(args: Array[String]): Unit = {
     val inOut = Seq(
-      (Array("flower","flow","flight"), "fl"),
-      (Array("dog","racecar","car"), ""),
+      (Array("flower", "flow", "flight"), "fl"),
+      (Array("dog", "racecar", "car"), ""),
       (Array("a"), "a"),
       (Array("ab", "a"), "a"),
-      (Array("reflower","flow","flight"), ""),
+      (Array("reflower", "flow", "flight"), "")
     )
 
     inOut.foreach { case (x, expected) =>
@@ -14,7 +14,9 @@ object LongestCommonPrefix {
       if (result == expected)
         println(s"Success for (${x.toSeq}) => ${expected}")
       else
-        System.err.println(s"FAIL for (${x.toSeq}) : ${expected} => result found: ${result}")
+        System.err.println(
+          s"FAIL for (${x.toSeq}) : ${expected} => result found: ${result}"
+        )
     }
   }
 
@@ -32,7 +34,7 @@ object LongestCommonPrefix {
     while (i < smallest.length) {
       val newChar = smallest(i)
       val isContainedInAll = others.forall(input => newChar == input(i))
-//        println(s"   startIndex[$startIndex] i[$i] tmpSubString[$tmpSubString] isContainedInAll[$isContainedInAll]")
+      //        println(s"   startIndex[$startIndex] i[$i] tmpSubString[$tmpSubString] isContainedInAll[$isContainedInAll]")
       if (isContainedInAll) {
         bestResult = bestResult + newChar
         i = i + 1

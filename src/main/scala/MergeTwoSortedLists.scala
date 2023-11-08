@@ -5,7 +5,6 @@ object MergeTwoSortedLists {
     var x: Int = _x
   }
 
-
   def mergeTwoLists(list1: ListNode, list2: ListNode): ListNode = {
     if (list1 == null)
       list2
