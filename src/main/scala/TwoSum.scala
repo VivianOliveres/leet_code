@@ -45,17 +45,17 @@ object TwoSum {
   /** Better solution as it checks, during the indexing phase, if we already have found a solution.
     */
   def twoSum(nums: Array[Int], target: Int): Array[Int] = {
-    val numIndexes: mutable.Map[Int, Seq[Int]] = mutable.Map()
+    val numIndexes: mutable.Map[Int, Int] = mutable.Map()
     var i = 0
     while (i < nums.length) {
       val value = nums(i)
       val other = target - value
       if (value == other && numIndexes.contains(value))
-        return Array(numIndexes(value).head, i)
+        return Array(numIndexes(value), i)
       else if (value != other && numIndexes.contains(other))
-        return Array(numIndexes(other).head, i)
+        return Array(numIndexes(other), i)
       else if (!numIndexes.contains(value))
-        numIndexes(value) = Seq(i)
+        numIndexes(value) = i
 
       i = i + 1
     }
