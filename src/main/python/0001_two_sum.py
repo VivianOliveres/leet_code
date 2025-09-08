@@ -1,15 +1,15 @@
 
 #First naive attempt in `0(n log n)` time and `0(1)` space:
 
- """
- class Solution:
-     def twoSum(self, nums: List[int], target: int) -> List[int]:
-         for i in range(len(nums)):
-             for j in range(i + 1, len(nums)):
-             	if nums[i] + nums[j] == target:
-             		return [i, j]
-         return [-1, -1]
- """
+"""
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        for i in range(len(nums)):
+            for j in range(i + 1, len(nums)):
+            	if nums[i] + nums[j] == target:
+            		return [i, j]
+        return [-1, -1]
+"""
 
 #Second attempt, it indexes values and their indexes. Then for each value, search in dictionary if there is the other value that the sum is equal to target.
 #`0(n)` in time and `0(n)` in space. \
